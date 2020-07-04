@@ -1,0 +1,12 @@
+<div class="container">
+    <ul class="nav">
+        <li class="upper"><a [routerLink]="''">
+            <p>Sorting Visualizer</p>
+        </a></li>
+        <li routerLinkActive="active" *ngFor="let menuItem of menuItems" class="{{menuItem.class}} nav-item">
+            <a [routerLink]="[menuItem.path]">
+                <p>{{menuItem.title}}</p>
+            </a>
+        </li>
+    </ul>
+</div>
