@@ -12,8 +12,7 @@ const routes: Routes = [
   {path:'selectionsort', component:SelectionsortComponent},
   {path:'mergesort', component:MergesortComponent},
   {path:'quicksort', component:QuicksortComponent},
-  {path:'heapsort', component:HeapsortComponent},
-  {path:'',redirectTo:'dashboard', pathMatch:'full'}
+  {path:'heapsort', component:HeapsortComponent}
 ];
 
 @NgModule({
