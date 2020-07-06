@@ -35,12 +35,15 @@ export class QuicksortComponent implements OnInit {
     this.arr = Object.assign([],this.values);
   }
   render(){
+    try{
     this.initialize();
     const arrayBars = document.getElementsByClassName('bar3') as HTMLCollectionOf<HTMLElement>;
     for(let i in arrayBars){
       arrayBars[i].style.height = String(this.values[i])+"px";
       arrayBars[i].style.backgroundColor = "black";
     }
+  }
+  catch(err){}
   }
 async quicksort(){
   try{

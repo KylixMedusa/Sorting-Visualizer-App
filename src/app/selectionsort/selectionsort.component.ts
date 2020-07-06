@@ -27,12 +27,15 @@ export class SelectionsortComponent implements OnInit {
     SelectionsortComponent.working=false;
   }
   render(){
+    try{
     this.initialize();
     const arrayBars = document.getElementsByClassName('bar1') as HTMLCollectionOf<HTMLElement>;
     for(let i in arrayBars){
       arrayBars[i].style.height = String(this.values[i])+"px";
       arrayBars[i].style.backgroundColor = "black";
     }
+  }
+  catch(err){}
   }
   
   async selectionsort()
