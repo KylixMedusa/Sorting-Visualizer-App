@@ -1,6 +1,7 @@
 <div *ngIf="loaderviewing" class="loader"></div>
 
-<div class="wrapper">
+<div id = "wrapper" class="wrapper" (resize)="checksidebar()">
+  <button class="sidebar--toggle" (click)="togglesidebar()"><div></div></button>
   <app-sidebar></app-sidebar>
   <div class="contents">
     <router-outlet></router-outlet>

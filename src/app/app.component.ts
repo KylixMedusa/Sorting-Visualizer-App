@@ -11,5 +11,10 @@ export class AppComponent implements OnInit{
   ngOnInit():void{
     this.loaderviewing = false;
   }
-
+  togglesidebar(){
+    var node = document.getElementById("wrapper").classList.toggle("change");
+  }
+  checksidebar(){
+    var node = document.getElementById("wrapper").classList.remove("change");
+  }
 }
