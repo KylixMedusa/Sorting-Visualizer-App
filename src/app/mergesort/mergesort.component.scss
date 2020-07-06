@@ -2,6 +2,8 @@
     width: max-content;
     height:450px;
     margin-top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
     position: relative;
     //padding: 20px 30px 0px 30px;
     display: flex;
@@ -50,12 +52,4 @@
 // }
 .buttons{
     position: absolute;
-}
-
-
-@media screen and (min-width:900px){
-    .wrapper{
-        left: 50%;
-        transform: translateX(-50%);
-    }
 }
