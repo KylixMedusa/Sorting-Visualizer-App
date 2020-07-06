@@ -1,1 +1,7 @@
-<p>quicksort works!</p>
+<div id="wrap" class="wrapper">
+    <div *ngFor="let value of values" class="bar3" [style.height.px]="[value]" [style.width.px]="[200/arraylength]" [style.background-color]="'black'"></div>
+</div>
+    <button *ngIf = "!checkworking()" (click)="quicksort()">Sort</button>
+    <button *ngIf = "!checkworking()" (click)="initialize()">Generate new Array</button>
+    <!-- <button *ngIf = "checkworking()" (click)="exitfunc()">Exit</button> -->
+    <input *ngIf = "!checkworking()" type="range" min="5" max="100" [(ngModel)]="arraylength" value="arraylength" (input)="initialize()">

@@ -13,7 +13,6 @@ export class BubblesortComponent implements OnInit,OnDestroy {
   static working:boolean=false;
   // static exit:boolean=false;
   static sorted:boolean=false;
-  static promise:any;
   constructor() { 
     this.arraylength = 10;
   }
@@ -35,15 +34,13 @@ export class BubblesortComponent implements OnInit,OnDestroy {
   
   async bubblesort()
   {  
-     //if(!BubblesortComponent.working&&!BubblesortComponent.sorted){
-        //BubblesortComponent.exit = false;
       try{
         BubblesortComponent.working = true;
         var wrapper = document.getElementById("wrap");
         var bars = document.getElementsByClassName("bar") as HTMLCollectionOf<HTMLElement> ;
         for(var i=0; i<bars.length-1;i++){
             for(var j=0;j<bars.length-i-1;j++){
-              BubblesortComponent.promise = await new Promise(r => setTimeout(r, (3000/this.arraylength)));
+              var promise = await new Promise(r => setTimeout(r, (3000/this.arraylength)));
                 if(j!=0)
                 {
                     bars[j-1].style.backgroundColor="black";
@@ -68,47 +65,6 @@ export class BubblesortComponent implements OnInit,OnDestroy {
         bars[0].style.backgroundColor="blue";
         BubblesortComponent.sorted =true;
         BubblesortComponent.working=false;
-        // var j=0;
-        // var i=0;
-        // var animate = setInterval(function(){
-        //     if(j!=0)
-        //     {
-        //         bars[j-1].style.backgroundColor="black";
-        //     }
-        //     if(bars[j].style.height>bars[j+1].style.height)
-        //     {
-        //         bars[j].style.backgroundColor="red";
-        //         bars[j+1].style.backgroundColor="red";
-        //         var node=bars[j];
-        //         wrapper.removeChild(bars[j]);
-        //         wrapper.insertBefore(node,bars[j+1]);
-        //     }
-        //     else
-        //     {
-        //         bars[j].style.backgroundColor="green";
-        //         bars[j+1].style.backgroundColor="green";
-        //     }
-        //     j=j+1;
-        //     if(j===(bars.length-1-i))
-        //     {
-        //         bars[j].style.backgroundColor="blue";
-        //         bars[j-1].style.backgroundColor="black";
-        //         j=0;
-        //         i=i+1;
-        //     }
-        //     if(i==(bars.length-1))
-        //     {
-        //         bars[j].style.backgroundColor="blue";
-        //         BubblesortComponent.sorted =true;
-        //         BubblesortComponent.working=false;
-        //         clearInterval(animate);
-        //     }
-        //     // if(BubblesortComponent.exit){
-        //     //   BubblesortComponent.working=false;
-        //     //   clearInterval(animate);
-        //     //   return;}
-        // },(5000/this.arraylength));
-      //}
     }
     catch(err){
       console.log("Sudden stop in sort!!!!");
