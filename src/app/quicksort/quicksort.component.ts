@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { newArray } from '@angular/compiler/src/util';
+import { renderFlagCheckIfStmt } from '@angular/compiler/src/render3/view/template';
 
 @Component({
   selector: 'app-quicksort',
@@ -33,11 +34,19 @@ export class QuicksortComponent implements OnInit {
     QuicksortComponent.working=false;
     this.arr = Object.assign([],this.values);
   }
+  render(){
+    this.initialize();
+    const arrayBars = document.getElementsByClassName('bar3') as HTMLCollectionOf<HTMLElement>;
+    for(let i in arrayBars){
+      arrayBars[i].style.height = String(this.values[i])+"px";
+      arrayBars[i].style.backgroundColor = "black";
+    }
+  }
 async quicksort(){
   try{
     QuicksortComponent.working = true;
     await this.sort(0,this.values.length-1);
-    const arrayBars = document.getElementsByClassName('bar3') as HTMLCollectionOf<HTMLElement> ;
+    const arrayBars = document.getElementsByClassName('bar3') as HTMLCollectionOf<HTMLElement>;
     await new Promise(r => setTimeout(r, 3000/this.arraylength));
     for(let index in this.values){
         arrayBars[index].style.backgroundColor="blue";

@@ -26,6 +26,14 @@ export class SelectionsortComponent implements OnInit {
     SelectionsortComponent.sorted =true;
     SelectionsortComponent.working=false;
   }
+  render(){
+    this.initialize();
+    const arrayBars = document.getElementsByClassName('bar1') as HTMLCollectionOf<HTMLElement>;
+    for(let i in arrayBars){
+      arrayBars[i].style.height = String(this.values[i])+"px";
+      arrayBars[i].style.backgroundColor = "black";
+    }
+  }
   
   async selectionsort()
   {  

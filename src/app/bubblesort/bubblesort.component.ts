@@ -31,6 +31,14 @@ export class BubblesortComponent implements OnInit,OnDestroy {
     BubblesortComponent.sorted =true;
     BubblesortComponent.working=false;
   }
+  render(){
+    this.initialize();
+    const arrayBars = document.getElementsByClassName('bar') as HTMLCollectionOf<HTMLElement>;
+    for(let i in arrayBars){
+      arrayBars[i].style.height = String(this.values[i])+"px";
+      arrayBars[i].style.backgroundColor = "black";
+    }
+  }
   
   async bubblesort()
   {  

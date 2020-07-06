@@ -31,7 +31,14 @@ export class HeapsortComponent implements OnInit {
     HeapsortComponent.working=false;
     this.arr = Array.from(this.values);
   }
-  
+  render(){
+    this.initialize();
+    const arrayBars = document.getElementsByClassName('bar4') as HTMLCollectionOf<HTMLElement>;
+    for(let i in arrayBars){
+      arrayBars[i].style.height = String(this.values[i])+"px";
+      arrayBars[i].style.backgroundColor = "black";
+    }
+  }
 async heapsort(){
     HeapsortComponent.working = true;
     await this.sort();

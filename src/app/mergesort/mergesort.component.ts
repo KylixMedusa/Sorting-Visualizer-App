@@ -31,7 +31,14 @@ export class MergesortComponent implements OnInit {
     MergesortComponent.working=false;
     this.arr = Array.from(this.values);
   }
-  
+  render(){
+    this.initialize();
+    const arrayBars = document.getElementsByClassName('bar2') as HTMLCollectionOf<HTMLElement>;
+    for(let i in arrayBars){
+      arrayBars[i].style.height = String(this.values[i])+"px";
+      arrayBars[i].style.backgroundColor = "black";
+    }
+  }
   async mergesort(){
     try{
       MergesortComponent.working = true;
