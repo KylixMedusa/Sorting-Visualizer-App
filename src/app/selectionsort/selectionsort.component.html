@@ -1,5 +1,7 @@
+<div class="holder">
 <div id="wrap" class="wrapper">
 <div *ngFor="let value of values" class="bar1" [style.height.px]="[value]" [style.width.px]="[200/arraylength]" [style.background-color]="'black'"></div>
+</div>
 </div>
 <div class="buttons">
 <button *ngIf = "!checkworking()" (click)="selectionsort()">Sort</button>
